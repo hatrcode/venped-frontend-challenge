@@ -46,6 +46,7 @@ function DropdownFilter({ setPage, align, setTaxFilter }) {
 
   // Handle change Checkbox
   const handleChange = (e) => {
+    setFilterArray([]);
     e.target.checked
       ? setFilterArray([...filterArray, e.target.value])
       : setFilterArray(filterArray.filter((item) => item !== e.target.value));
