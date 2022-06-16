@@ -5,9 +5,11 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 
 import NotFoundImage from "../images/404-illustration.svg";
+import { useTranslation } from "react-i18next";
 
 function PageNotFound() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -31,13 +33,11 @@ function PageNotFound() {
                     alt="404 illustration"
                   />
                 </div>
-                <div className="mb-6">
-                  Hmm...esta página no existe. Intenta buscar algo diferente
-                </div>
+                <div className="mb-6">{t("page_not_found")}</div>
                 <Link
                   to="/"
                   className="btn bg-blue-500 hover:bg-blue-600 text-white">
-                  Volver a la página principal
+                  {t("return_main_page")}
                 </Link>
               </div>
             </div>
