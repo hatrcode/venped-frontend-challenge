@@ -46,7 +46,7 @@ const ProductContainer = () => {
           {/* Right: Actions */}
           <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
             {/* Search form */}
-            <SearchForm placeholder="Search by Product ID…" />
+            <SearchForm setPage={setPage} handleQuery={handleQuery} />
             {/* Filter button */}
             <DropdownFilter align="right" />
           </div>
