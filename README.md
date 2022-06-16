@@ -1,6 +1,15 @@
 # VENPED Code Challenge
 
-This project displays data fetched from GraphQL test server and additional functionalities such as sorting, filtering, searching and pagination.
+This project is made with React, Tailwind CSS, and Material UI.
+
+It displays data fetched from GraphQL test server and additional functionalities, including:
+
+- sorting
+- filtering
+- searching
+- pagination.
+
+The system also offers multi-language selection.
 
 ## Project setup
 
