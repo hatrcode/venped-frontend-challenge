@@ -1,16 +1,21 @@
-# Mosaic React
+# VENPED Code Challenge
 
-React landing page template.
+This project displays data fetched from GraphQL test server and additional functionalities such as sorting, filtering, searching and pagination.
 
 ## Project setup
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run development
+
 ```
 npm run dev
 ```
 
-### Customize configuration
-See [Configuration Reference](https://vitejs.dev/guide/).
+### Test
+
+```
+npm test
+```
