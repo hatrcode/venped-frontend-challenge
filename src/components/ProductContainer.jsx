@@ -62,9 +62,13 @@ const ProductContainer = () => {
         />
 
         {/* Pagination */}
-        <div className="mt-8">
-          <ItemPagination />
-        </div>
+        {numOfPages > 1 && (
+          <ItemPagination
+            page={page}
+            setPage={setPage}
+            numOfPages={numOfPages}
+          />
+        )}
       </div>
     </main>
   );
