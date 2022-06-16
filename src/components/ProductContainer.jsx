@@ -48,7 +48,11 @@ const ProductContainer = () => {
             {/* Search form */}
             <SearchForm setPage={setPage} handleQuery={handleQuery} />
             {/* Filter button */}
-            <DropdownFilter align="right" />
+            <DropdownFilter
+              align="right"
+              setPage={setPage}
+              setTaxFilter={setTaxFilter}
+            />
           </div>
         </div>
 
