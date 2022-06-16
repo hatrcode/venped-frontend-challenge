@@ -1,0 +1,15 @@
+export const TRANSLATIONS_ES = {
+  id: "id",
+  title: "artículos",
+  price: "precio",
+  tax: "impuesto",
+  stock: "stock",
+  products: "productos",
+  catalogue: "catalogó",
+  search: "busca",
+  fitler: "impuestos",
+  clear: "borra",
+  apply: "aplicar",
+  page_not_found: "Hmm...esta página no existe. Intenta buscar algo diferente",
+  return_main_page: "Volver a la página principal",
+};
