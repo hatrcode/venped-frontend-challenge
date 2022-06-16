@@ -4,12 +4,15 @@ import SearchForm from "./SearchForm";
 import DropdownFilter from "./DropdownFilter";
 import ProductsTable from "./ProductsTable";
 import ItemPagination from "./ItemPagination";
+import { useTranslation } from "react-i18next";
+import { capitalize } from "../utils/capitalize";
 
 const ProductContainer = () => {
   const [taxFilter, setTaxFilter] = useState([]);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState({ field: "id", order: "asc" });
+  const { t } = useTranslation();
 
   const handleQuery = (searchQuery) => {
     setQuery({ query: searchQuery });
@@ -39,7 +42,7 @@ const ProductContainer = () => {
           {/* Left: Title */}
           <div className="mb-4 sm:mb-0">
             <h1 className="text-2xl md:text-3xl text-slate-800 font-bold">
-              Catálogo
+              {capitalize(t("catalogue"))}
             </h1>
           </div>
 
