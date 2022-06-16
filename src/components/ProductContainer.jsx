@@ -1,10 +1,36 @@
 import React, { useState } from "react";
+import { useFetch } from "../hooks/useFetch";
 import SearchForm from "./SearchForm";
-import FilterButton from "./DropdownFilter";
+import DropdownFilter from "./DropdownFilter";
 import ProductsTable from "./ProductsTable";
-import PaginationNumeric from "./PaginationNumeric";
+import ItemPagination from "./ItemPagination";
 
 const ProductContainer = () => {
+  const [taxFilter, setTaxFilter] = useState([]);
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(1);
+  const [sorting, setSorting] = useState({ field: "id", order: "asc" });
+
+  const handleQuery = (searchQuery) => {
+    setQuery({ query: searchQuery });
+  };
+
+  let titleFilter = query ? query.query : "";
+
+  let sortingOrder = sorting.order ? sorting.order : "";
+
+  let sortingField = sorting.field ? sorting.field : "";
+
+  const { products, pagination } = useFetch(
+    taxFilter,
+    titleFilter,
+    sortingOrder,
+    sortingField,
+    page
+  );
+
+  let numOfPages = pagination ? pagination.totalPages : "";
+
   return (
     <main>
       <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
@@ -22,16 +48,22 @@ const ProductContainer = () => {
             {/* Search form */}
             <SearchForm placeholder="Search by Product ID…" />
             {/* Filter button */}
-            <FilterButton align="right" />
+            <DropdownFilter align="right" />
           </div>
         </div>
 
         {/* Table */}
-        <ProductsTable />
+        <ProductsTable
+          sorting={sorting}
+          setSorting={setSorting}
+          pagination={pagination}
+          products={products}
+          setPage={setPage}
+        />
 
         {/* Pagination */}
         <div className="mt-8">
-          <PaginationNumeric />
+          <ItemPagination />
         </div>
       </div>
     </main>
